@@ -29,7 +29,7 @@ const ExperienceSection = () => {
     },
     {
       company: 'kolares TI',
-      position: language === 'pt' ? 'Engenheiro de Software Ágil - Estagiário' : 'Agile Software Engineer - Intern',
+      position: language === 'pt' ? 'Desenvolvedor de Software Ágil - Estagiário' : 'Agile Software Developer - Intern',
       period: language === 'pt' ? 'Maio 2023 - Março 2024 (11 meses)' : 'May 2023 - March 2024 (11 months)',
       location: 'Belém, Pará, Brasil',
       color: 'from-violet-500 to-purple-400',
