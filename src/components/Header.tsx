@@ -69,7 +69,7 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-8">
             <button
               onClick={toggleLanguage}
               className="text-white/80 hover:text-white transition-colors duration-300"
@@ -88,7 +88,7 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-portfolio-dark/95 backdrop-blur-sm border-b border-white/10 animate-fade-in">
-            <nav className="container mx-auto px-6 py-4 flex flex-col space-y-4">
+            <nav className="container mx-auto px-6 py-6 flex flex-col space-y-6">
               {navItems.map((item) => (
                 <button
                   key={item.key}
