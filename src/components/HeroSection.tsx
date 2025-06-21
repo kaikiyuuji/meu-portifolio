@@ -20,7 +20,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 md:pt-20">
       {/* Background Base */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-portfolio-dark to-purple-950/50 z-0"></div>
       
@@ -58,14 +58,12 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10">
         {/* Left Content */}
-        <div className="text-center md:text-left space-y-6 animate-slide-in-left">
-          <div className="container mx-auto px-6 flex flex-col items-center md:grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div className="hidden md:block w-16 h-1 bg-gradient-to-r from-portfolio-blue to-portfolio-gray mb-4"></div>
-          </div>
+        <div className="text-center md:text-left space-y-6 animate-slide-in-left mt-8 md:mt-0">
+          <div className="hidden md:block w-16 h-1 bg-gradient-to-r from-portfolio-blue to-portfolio-gray mb-4"></div>
           
-          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight min-h-[3.5rem] md:min-h-[4.5rem]">
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight min-h-[5rem] md:min-h-[6rem]">
             <Typewriter
-              key={language} // Adiciona uma key baseada na linguagem para forçar remontagem quando mudar
+              key={language}
               onInit={(typewriter) => {
                 typewriter
                   .typeString(language === 'pt' ? 'Olá! Eu sou Kaiki Yuuji' : "Hello! I'm Kaiki Yuuji")
