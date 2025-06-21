@@ -1,5 +1,6 @@
 
 import type { Config } from "tailwindcss";
+import tailwindcssAnimate from "tailwindcss-animate";
 
 export default {
 	darkMode: ["class"],
@@ -140,6 +141,14 @@ export default {
 					'50%': {
 						transform: 'translateY(-10px)'
 					}
+				},
+				'blink': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0'
+					}
 				}
 			},
 			animation: {
@@ -150,8 +159,9 @@ export default {
 				'slide-in-right': 'slide-in-right 0.8s ease-out',
 				'scale-in': 'scale-in 0.6s ease-out',
 				'float': 'float 3s ease-in-out infinite',
+				'blink': 'blink 1s ease-in-out infinite',
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [tailwindcssAnimate],
 } satisfies Config;

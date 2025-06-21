@@ -60,21 +60,30 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="text-center md:text-left space-y-6 animate-slide-in-left">
           <div className="container mx-auto px-6 flex flex-col items-center md:grid md:grid-cols-2 gap-12 items-center relative z-10">
-            <div className="w-16 h-1 bg-gradient-to-r from-portfolio-blue to-portfolio-gray mb-4"></div>
+            <div className="hidden md:block w-16 h-1 bg-gradient-to-r from-portfolio-blue to-portfolio-gray mb-4"></div>
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight min-h-[3.5rem] md:min-h-[4.5rem]">
             <Typewriter
+              key={language} // Adiciona uma key baseada na linguagem para forçar remontagem quando mudar
               onInit={(typewriter) => {
                 typewriter
                   .typeString(language === 'pt' ? 'Olá! Eu sou Kaiki Yuuji' : "Hello! I'm Kaiki Yuuji")
+                  .pauseFor(2000)
+                  .deleteAll()
+                  .pauseFor(500)
+                  .typeString(language === 'pt' ? 'Olá! Eu sou Kaiki Yuuji' : "Hello! I'm Kaiki Yuuji")
+                  .pauseFor(2000)
+                  .deleteAll()
+                  .pauseFor(500)
                   .start();
               }}
               options={{
                 delay: 50,
                 cursor: '|',
                 wrapperClassName: 'text-white',
-                cursorClassName: 'text-portfolio-white animate-pulse',
+                cursorClassName: 'text-portfolio-white animate-blink',
+                loop: true,
               }}
             />
           </h1>
