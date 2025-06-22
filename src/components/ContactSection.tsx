@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Mail, MapPin, Linkedin, Github, Twitter, Instagram, Youtube } from 'lucide-react';
 import { MessageCircle } from 'lucide-react';
 
 const ContactSection = () => {
   const { t, language } = useLanguage();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Nome: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:kaikiramoshirata@gmail.com?subject=${subject}&body=${body}`;
+  };
 
   const contactInfo = [
     {
@@ -112,53 +134,56 @@ const ContactSection = () => {
                 {language === 'pt' ? 'Envie uma Mensagem' : 'Send a Message'}
               </h3>
               
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <input
                     type="text"
                     name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     placeholder={language === 'pt' ? 'Seu Nome' : 'Your Name'}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-portfolio-blue transition-colors duration-300"
                     required
-                    disabled
                   />
                 </div>
                 <div>
                   <input
                     type="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder={language === 'pt' ? 'Seu Email' : 'Your Email'}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-portfolio-blue transition-colors duration-300"
                     required
-                    disabled
                   />
                 </div>
                 <div>
                   <input
                     type="text"
                     name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
                     placeholder={language === 'pt' ? 'Assunto' : 'Subject'}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-portfolio-blue transition-colors duration-300"
                     required
-                    disabled
                   />
                 </div>
                 <div>
                   <textarea
                     rows={5}
                     name="message"
+                    value={formData.message}
+                    onChange={handleChange}
                     placeholder={language === 'pt' ? 'Sua Mensagem' : 'Your Message'}
                     className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:border-portfolio-blue transition-colors duration-300 resize-none"
                     required
-                    disabled
                   ></textarea>
                 </div>
                 <button
-                  type="button"
-                  disabled
+                  type="submit"
                   className="w-full bg-gradient-to-r from-portfolio-blue to-portfolio-gray text-white py-4 rounded-lg font-medium hover:shadow-lg hover:shadow-portfolio-blue/25 transition-all duration-300 flex justify-center items-center"
                 >
-                  {language === 'pt' ? 'Em breve' : 'Coming Soon'}
+                  {language === 'pt' ? 'Enviar Mensagem' : 'Send Message'}
                 </button>
               </form>
             </div>
