@@ -41,10 +41,10 @@ const ProjectsSection = () => {
         { method: 'PUT', path: '/api/tasks/{id}', desc: language === 'pt' ? 'Atualizar tarefa' : 'Update task' },
         { method: 'DELETE', path: '/api/tasks/{id}', desc: language === 'pt' ? 'Remover tarefa' : 'Delete task' }
       ],
-      image: 'https://raw.githubusercontent.com/kaikiyuuji/Taskvel/main/public/taskvel-banner.webp',
+      image: '/banner/taskvel.png',
       githubUrl: 'https://github.com/kaikiyuuji/Taskvel',
       liveUrl: '#',
-      status: language === 'pt' ? 'Em desenvolvimento' : 'In development',
+      status: language === 'pt' ? 'Concluído' : 'Completed',
       tags: ['Laravel', 'React', 'Fullstack']
     },
     {
