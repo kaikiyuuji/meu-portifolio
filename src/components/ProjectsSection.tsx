@@ -7,6 +7,47 @@ const ProjectsSection = () => {
 
   const projects = [
     {
+      title: 'Taskvel',
+      description: language === 'pt'
+        ? 'Gerenciador de tarefas moderno, com backend em Laravel e frontend em React. Projeto de estudo focado em integração fullstack, organização de código e boas práticas.'
+        : 'Modern task manager, with Laravel backend and React frontend. Study project focused on fullstack integration, code organization and best practices.',
+      longDescription: language === 'pt'
+        ? 'Taskvel é uma aplicação web para gerenciamento de tarefas, criada para praticar integração entre um backend robusto em Laravel e um frontend reativo em React. Inclui autenticação, CRUD de listas e tarefas, e interface responsiva.'
+        : 'Taskvel is a web application for task management, created to practice integration between a robust Laravel backend and a reactive React frontend. Includes authentication, CRUD for lists and tasks, and a responsive interface.',
+      technologies: ['Laravel 12', 'PHP 8.2+', 'React 19', 'Vite', 'TypeScript', 'TailwindCSS', 'shadcn/ui', 'Radix UI', 'MySQL'],
+      features: [
+        {
+          icon: Users,
+          text: language === 'pt' ? 'Vínculo entre usuários, listas e tarefas' : 'Relationship between users, lists and tasks'
+        },
+        {
+          icon: Server,
+          text: language === 'pt' ? 'API RESTful com autenticação' : 'RESTful API with authentication'
+        },
+        {
+          icon: Database,
+          text: language === 'pt' ? 'Migrations, seeds e Eloquent ORM' : 'Migrations, seeds and Eloquent ORM'
+        },
+        {
+          icon: Settings,
+          text: language === 'pt' ? 'Frontend moderno e responsivo' : 'Modern and responsive frontend'
+        }
+      ],
+      endpoints: [
+        { method: 'GET', path: '/api/lists', desc: language === 'pt' ? 'Listar listas de tarefas' : 'List task lists' },
+        { method: 'POST', path: '/api/lists', desc: language === 'pt' ? 'Criar nova lista' : 'Create new list' },
+        { method: 'GET', path: '/api/tasks', desc: language === 'pt' ? 'Listar tarefas' : 'List tasks' },
+        { method: 'POST', path: '/api/tasks', desc: language === 'pt' ? 'Criar nova tarefa' : 'Create new task' },
+        { method: 'PUT', path: '/api/tasks/{id}', desc: language === 'pt' ? 'Atualizar tarefa' : 'Update task' },
+        { method: 'DELETE', path: '/api/tasks/{id}', desc: language === 'pt' ? 'Remover tarefa' : 'Delete task' }
+      ],
+      image: 'https://raw.githubusercontent.com/kaikiyuuji/Taskvel/main/public/taskvel-banner.webp',
+      githubUrl: 'https://github.com/kaikiyuuji/Taskvel',
+      liveUrl: '#',
+      status: language === 'pt' ? 'Em desenvolvimento' : 'In development',
+      tags: ['Laravel', 'React', 'Fullstack']
+    },
+    {
       title: 'API REST com PHP',
       description: language === 'pt'
         ? 'API RESTful desenvolvida em PHP com Slim Framework. Projeto de estudo focado em práticas de desenvolvimento de APIs, incluindo criação de endpoints, manipulação de requisições HTTP e estruturação de projetos.'
