@@ -7,6 +7,48 @@ const ProjectsSection = () => {
 
   const projects = [
     {
+      title: 'Navajafy',
+      description: language === 'pt'
+        ? 'Plataforma web completa para conectar usuários a barbearias, permitindo navegação por serviços e agendamento de horários de forma transparente.'
+        : 'Complete web platform to connect users to barbershops, allowing service browsing and seamless appointment scheduling.',
+      longDescription: language === 'pt'
+        ? 'Navajafy é uma aplicação fullstack desenvolvida em Next.js que conecta clientes a barbearias. Inclui autenticação com Google, listagem de barbearias, visualização de serviços e sistema completo de agendamentos com gerenciamento de horários.'
+        : 'Navajafy is a fullstack application built with Next.js that connects clients to barbershops. Includes Google authentication, barbershop listings, service viewing, and complete appointment system with schedule management.',
+      technologies: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'NextAuth.js', 'Tailwind CSS', 'Shadcn/UI', 'React Hook Form', 'Zod'],
+      features: [
+        {
+          icon: Users,
+          text: language === 'pt' ? 'Autenticação segura com Google' : 'Secure Google authentication'
+        },
+        {
+          icon: Server,
+          text: language === 'pt' ? 'Sistema completo de agendamentos' : 'Complete appointment system'
+        },
+        {
+          icon: Database,
+          text: language === 'pt' ? 'Banco de dados PostgreSQL com Prisma' : 'PostgreSQL database with Prisma'
+        },
+        {
+          icon: Settings,
+          text: language === 'pt' ? 'Interface moderna e responsiva' : 'Modern and responsive interface'
+        }
+      ],
+      endpoints: [
+        { method: 'GET', path: '/', desc: language === 'pt' ? 'Página principal' : 'Main landing page' },
+        { method: 'GET', path: '/barbershops', desc: language === 'pt' ? 'Listar barbearias' : 'List barbershops' },
+        { method: 'GET', path: '/barbershops/[id]', desc: language === 'pt' ? 'Detalhes da barbearia' : 'Barbershop details' },
+        { method: 'GET', path: '/bookings', desc: language === 'pt' ? 'Visualizar agendamentos' : 'View bookings' },
+        { method: 'POST', path: '/api/auth/signin', desc: language === 'pt' ? 'Iniciar sessão' : 'Sign in' },
+        { method: 'POST', path: 'CreateBooking', desc: language === 'pt' ? 'Criar agendamento' : 'Create booking' }
+      ],
+      image: '/banner/navajafy.png',
+      githubUrl: 'https://github.com/kaikiyuuji/Navajafy',
+      liveUrl: 'https://navajafy-barbearias.vercel.app/',
+      status: language === 'pt' ? 'Publicado' : 'Published',
+      tags: ['Next.js', 'TypeScript', 'Fullstack']
+    },
+    {
+
       title: 'Taskvel',
       description: language === 'pt'
         ? 'Gerenciador de tarefas moderno, com backend em Laravel e frontend em React. Projeto de estudo focado em integração fullstack, organização de código e boas práticas.'
