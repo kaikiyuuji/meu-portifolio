@@ -6,7 +6,10 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Portfolio - Desenvolvedor Full Stack",
   description: "Portfolio pessoal de desenvolvedor full stack especializado em tecnologias modernas",
-    generator: 'v0.dev'
+    generator: 'v0.dev',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
