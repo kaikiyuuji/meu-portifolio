@@ -28,7 +28,7 @@ const useLanguage = () => useContext(LanguageContext)
 const translations = {
   pt: {
     developer: "Desenvolvedor",
-    fullStack: "Full Stack",
+    fullStack: "Backend",
     heroDescription: "Criando experiências digitais elegantes e funcionais com tecnologias modernas",
     viewProjects: "Ver Projetos",
     contact: "Contato",
@@ -51,7 +51,7 @@ const translations = {
   },
   en: {
     developer: "Developer",
-    fullStack: "Full Stack",
+    fullStack: "Backend",
     heroDescription: "Creating elegant and functional digital experiences with modern technologies",
     viewProjects: "View Projects",
     contact: "Contact",
@@ -61,6 +61,7 @@ const translations = {
     yearsExperience: "Years of Experience",
     technologies: "Technologies",
     experience: "Professional Experience",
+    experienceDescription: "My professional and academic journey in software and technology development",
     projects: "Projects",
     projectsDescription: "A selection of my most recent and significant work",
     technologiesProject: "Technologies:",
