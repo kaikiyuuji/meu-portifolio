@@ -410,7 +410,7 @@ const getProjects = (language: "pt" | "en") => [
     title: "Taskvel",
     description:
       language === "pt"
-        ? "Gerenciador de tarefas moderno, com backend em Laravel e frontend em React. Projeto de estudo focado em integração fullstack, organização de código e boas práticas."
+        ? "Gerenciador de tarefas moderno, com backend em Laravel e frontend em React. Projeto de estudo focado em integração fullstack."
         : "Modern task manager, with Laravel backend and React frontend. Study project focused on fullstack integration, code organization and best practices.",
     longDescription:
       language === "pt"
@@ -449,7 +449,7 @@ const getProjects = (language: "pt" | "en") => [
       },
     ],
     githubUrl: "https://github.com/kaikiyuuji/Taskvel",
-    liveUrl: "#",
+    liveUrl: "https://taskvel-production.up.railway.app/",
     status: language === "pt" ? "Concluído" : "Completed",
     tags: ["Laravel", "React", "Fullstack"],
   },
